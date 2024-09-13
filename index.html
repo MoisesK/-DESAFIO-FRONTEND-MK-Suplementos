@@ -197,6 +197,56 @@
       });
     })
 
+    document.getElementById('filter-search-mobile').addEventListener('click', (e) => {
+      e.preventDefault();
+      itemsContentDiv.innerHTML = '';
+
+      itemsContentDiv.appendChild(loading);
+
+      const input = document.getElementById('filter-input-mobile');
+
+      searchProduct(input.value).then((data) => {
+        itemsContentDiv.removeChild(loading)
+        const contentSection = document.getElementById('items-content');
+
+        data.forEach((d) => {
+          const itemDiv = document.createElement('div');
+          itemDiv.classList.add('item');
+
+          const itemImg = document.createElement('img');
+          itemImg.src = d.image;
+
+          const itemH3 = document.createElement('h3');
+          itemH3.innerText = d.name;
+
+          itemDiv.appendChild(itemImg);
+          itemDiv.appendChild(itemH3);
+
+          const monetaryDiv = document.createElement('div');
+          monetaryDiv.classList.add('monetary-info');
+
+          const monetarySufix = document.createElement('p');
+          monetarySufix.innerText = d.sufix;
+
+          const monetaryValue = document.createElement('p');
+          monetaryValue.classList.add('value');
+          monetaryValue.innerText = d.amount;
+
+          const unitText = document.createElement('p');
+          unitText.innerText = "(unidade)";
+          unitText.classList.add('small-text');
+
+          monetaryDiv.appendChild(monetarySufix);
+          monetaryDiv.appendChild(monetaryValue);
+          monetaryDiv.appendChild(unitText);
+
+          itemDiv.appendChild(monetaryDiv);
+
+          contentSection.appendChild(itemDiv);
+        })
+      });
+    })
+
     populateProducts().then((data) => {
       itemsContentDiv.removeChild(loading)
       const contentSection = document.getElementById('items-content');
