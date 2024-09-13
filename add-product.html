@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MK Suplementos</title>
+  <link rel="stylesheet" type="text/css" href="src/css/style.css">
+  <link rel="stylesheet" type="text/css" href="src/css/product-style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/eb9613833e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="header-logo">
+        <h1>
+          <i class="fa-solid fa-star"></i>
+          MK Suplementos
+        </h1>
+      </div>
+      <div class="header-icons">
+        <button class="material-symbols-outlined">person</button>
+        <button class="material-symbols-outlined">shopping_cart</button>
+      </div>
+    </header>
+
+    <section class="container add-products">
+      <div class="add-products-fields">
+        <div class="field">
+          <p>Nome do produto</p>
+          <input id="name" placeholder="Ex:. Multivitaminico" class="input-entry">
+        </div>
+        <div class="field">
+          <p>URL da imagem do produto</p>
+          <input id="image" placeholder="Ex:. https://google.com.br/..." class="input-entry">
+        </div>
+        <div class="field">
+          <p>Valor por unidade</p>
+          <input id="amount" placeholder="Ex:. 23,00" class="input-entry">
+        </div>
+        <div class="field">
+          <p>Sufixo do valor</p>
+          <select id="sufix">
+            <option  value="R$">R$</option>
+            <option  value="$">$</option>
+          </select>
+        </div>
+        <div class="field">
+          <button id="register-product">Cadastrar</button>
+        </div>
+      </div>
+      <div id="products" class="products">
+        <div class="product">
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <hr>
+
+  <footer>
+    <section class="footer-navigation">
+      <div class="container nav">
+        <a><span>Contato</span></a>
+        <a><span>Termos e Serviço</span></a>
+        <a><span>Política de Privacidade</span></a>
+        <a><span>Cancelamento, troca e reembolso</span></a>
+      </div>
+
+      <div class="container newsletter">
+        <form id="newsletter-subcription">
+          <div class="input">
+            <label for="newsletter-mail">Newsletter</label>
+            <input type="email" id="newsletter-mail" class="input-entry" placeholder="Digite seu melhor email">
+          </div>
+          <button id="newsletter-subscription-button" form="newsletter-subcription" type="submit">Inscrever</button>
+        </form>
+      </div>
+    </section>
+
+    <hr>
+
+
+    <section class="container footer-social">
+      <div class="media">
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-square-facebook"></i>
+      </div>
+
+      <div class="payments">
+        <img src="src/images/metodos-pagamento.webp">
+      </div>
+    </section>
+  </footer>
+
+  <script src="src/js/populate-products.js"></script>
+  <script src="src/js/functions.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const loading = makeLoading();
+
+    const itemsContentDiv = document.getElementById('products');
+    itemsContentDiv.appendChild(loading);
+
+    document.getElementById('register-product').addEventListener('click', (e) => {
+      e.preventDefault();
+      alert('Ainda não implementado');
+
+      const name = document.getElementById('name');
+      const amount = document.getElementById('image');
+      const image = document.getElementById('amount');
+      const sufix = document.getElementById('sufix');
+
+    })
+
+    populateProducts().then((data) => {
+      itemsContentDiv.removeChild(loading)
+      const contentSection = document.getElementById('items-content');
+
+      const table = document.createElement('table');
+      const thead = document.createElement('thead');
+      table.appendChild(thead);
+
+      const headerTr = document.createElement('tr');
+      thead.appendChild(headerTr);
+
+      const th = document.createElement('th');
+
+      th.classList.add('header-product-table');
+      th.colSpan = 4;
+      th.innerText = 'Produtos Cadastrados';
+
+      headerTr.appendChild(th);
+
+      const secondaryHeaderTr = document.createElement('tr');
+      thead.appendChild(secondaryHeaderTr);
+
+      const headerNameTh = document.createElement('th');
+      headerNameTh.innerText = 'Nome';
+      headerNameTh.classList.add('name');
+
+      const headerAmountTh = document.createElement('th');
+      headerAmountTh.innerText = 'Valor';
+      headerAmountTh.classList.add('amount');
+
+      const headerSufixTh = document.createElement('th');
+      headerSufixTh.innerText = 'Sufixo';
+      headerSufixTh.classList.add('sufix');
+
+      const headerImageTh = document.createElement('th');
+      headerImageTh.innerText = 'Image';
+      headerImageTh.classList.add('image');
+
+      secondaryHeaderTr.appendChild(headerNameTh);
+      secondaryHeaderTr.appendChild(headerAmountTh);
+      secondaryHeaderTr.appendChild(headerSufixTh);
+      secondaryHeaderTr.appendChild(headerImageTh);
+
+      const tbody = document.createElement('tbody');
+      table.appendChild(tbody);
+
+      data.forEach((d) => {
+        const tr = document.createElement('tr');
+
+        const bodyNameTh = document.createElement('th');
+        bodyNameTh.innerText = d.name;
+        bodyNameTh.classList.add('name');
+
+        const bodyAmountTh = document.createElement('th');
+        bodyAmountTh.innerText = d.amount;
+        bodyAmountTh.classList.add('amount');
+
+        const bodySufixTh = document.createElement('th');
+        bodySufixTh.innerText = d.sufix;
+        bodySufixTh.classList.add('sufix');
+
+        const bodyImageTh = document.createElement('th');
+        bodyImageTh.innerText = d.image;
+        bodyImageTh.classList.add('image');
+
+        tr.appendChild(bodyNameTh);
+        tr.appendChild(bodyAmountTh);
+        tr.appendChild(bodySufixTh);
+        tr.appendChild(bodyImageTh);
+
+        tbody.appendChild(tr);
+      })
+
+      itemsContentDiv.appendChild(table)
+    });
+  })
+</script>
+</body>
+</html>
