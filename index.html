@@ -34,12 +34,10 @@
     
     <section id="carrousel" class="banner-section">
       <div class="swiper">
-          <div class="swiper-slide">
-            <img src="src/images/banner.jpeg" alt="banner" >
-          </div>
-          <div class="swiper-slide">
-            <img src="src/images/banner2.jpg" alt="banner" >
-          </div>
+        <div class="swiper-wrapper">
+            <img class="swiper-slide" src="src/images/banner.jpeg" alt="banner" >
+            <img class="swiper-slide" src="src/images/banner2.jpg" alt="banner" >
+        </div>
       </div>
     </section>
 
@@ -284,15 +282,15 @@
       })
     });
 
+    const swiper = new Swiper('.swiper', {
+      direction: 'horizontal',
+      loop: true,
+      autoplay: {
+        delay: 8000,
+      },
+      height: 800
+    });
   })
-
-  const swiper = new Swiper('.swiper', {
-    direction: 'horizontal',
-    loop: true,
-    autoplay: {
-      delay: 8000,
-    }
-  });
 </script>
 </body>
 </html>
