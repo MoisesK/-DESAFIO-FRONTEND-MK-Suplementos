@@ -1,0 +1,45 @@
+@media only screen and (min-width: 1200px) {
+    .promotion {
+        width: 100%;
+    }
+
+    .promotion .header-content {
+        width: 80vw;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .promotion .header-content p {
+        font-size: 20px;
+    }
+
+    .promotion .product-filter {
+        display: flex;
+        margin-right: 0;
+        gap: 10px;
+
+        align-items: center;
+    }
+
+    .promotion .product-filter div {
+        display: flex;
+        align-items: center;
+    }
+
+    .promotion .product-filter button {
+        margin-left: -8px;
+        width: 3vw;
+        height: 5vh;
+        font-size: 25px;
+        color: white;
+        background-color: var(--primary-color);
+        border: none;
+        border-radius: 0 8px 8px 0;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .promotion .product-filter-mobile {
+        display: none;
+    }
+}

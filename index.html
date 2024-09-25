@@ -4,6 +4,24 @@
     <meta charset="UTF-8">
     <title>MK Suplementos</title>
     <link rel="stylesheet" type="text/css" href="src/css/style.css">
+
+    <link rel="stylesheet" type="text/css" href="src/css/header/header-mobile.css">
+    <link rel="stylesheet" type="text/css" href="src/css/header/header-tablet.css">
+    <link rel="stylesheet" type="text/css" href="src/css/header/header.css">
+
+    <link rel="stylesheet" type="text/css" href="src/css/promotion/promotion.css">
+    <link rel="stylesheet" type="text/css" href="src/css/promotion/promotion-filter-mobile.css">
+
+    <link rel="stylesheet" type="text/css" href="src/css/promotion/item/promotion-item.css">
+    <link rel="stylesheet" type="text/css" href="src/css/promotion/item/promotion-item-mobile.css">
+
+    <link rel="stylesheet" type="text/css" href="src/css/input.css">
+
+    <link rel="stylesheet" type="text/css" href="src/css/footer/footer.css">
+    <link rel="stylesheet" type="text/css" href="src/css/footer/footer-tablet.css">
+    <link rel="stylesheet" type="text/css" href="src/css/footer/footer-mobile.css">
+
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,9 +87,9 @@
       <div id="items-content" class="container items-content"></div>
     </section>
   </main>
-  <hr>
 
   <footer>
+  <hr>
     <section class="footer-navigation">
       <div class="container nav">
         <a><span>Contato</span></a>
@@ -90,9 +108,7 @@
         </form>
       </div>
     </section>
-
     <hr>
-
 
     <section class="container footer-social">
       <div class="media">
@@ -153,41 +169,7 @@
         itemsContentDiv.removeChild(loading)
         const contentSection = document.getElementById('items-content');
 
-        data.forEach((d) => {
-          const itemDiv = document.createElement('div');
-          itemDiv.classList.add('item');
-
-          const itemImg = document.createElement('img');
-          itemImg.src = d.image;
-
-          const itemH3 = document.createElement('h3');
-          itemH3.innerText = d.name;
-
-          itemDiv.appendChild(itemImg);
-          itemDiv.appendChild(itemH3);
-
-          const monetaryDiv = document.createElement('div');
-          monetaryDiv.classList.add('monetary-info');
-
-          const monetarySufix = document.createElement('p');
-          monetarySufix.innerText = d.sufix;
-
-          const monetaryValue = document.createElement('p');
-          monetaryValue.classList.add('value');
-          monetaryValue.innerText = d.amount;
-
-          const unitText = document.createElement('p');
-          unitText.innerText = "(unidade)";
-          unitText.classList.add('small-text');
-
-          monetaryDiv.appendChild(monetarySufix);
-          monetaryDiv.appendChild(monetaryValue);
-          monetaryDiv.appendChild(unitText);
-
-          itemDiv.appendChild(monetaryDiv);
-
-          contentSection.appendChild(itemDiv);
-        })
+        data.forEach((d) => contentSection.appendChild(makeItemRender(d)))
       });
     })
 
@@ -203,41 +185,7 @@
         itemsContentDiv.removeChild(loading)
         const contentSection = document.getElementById('items-content');
 
-        data.forEach((d) => {
-          const itemDiv = document.createElement('div');
-          itemDiv.classList.add('item');
-
-          const itemImg = document.createElement('img');
-          itemImg.src = d.image;
-
-          const itemH3 = document.createElement('h3');
-          itemH3.innerText = d.name;
-
-          itemDiv.appendChild(itemImg);
-          itemDiv.appendChild(itemH3);
-
-          const monetaryDiv = document.createElement('div');
-          monetaryDiv.classList.add('monetary-info');
-
-          const monetarySufix = document.createElement('p');
-          monetarySufix.innerText = d.sufix;
-
-          const monetaryValue = document.createElement('p');
-          monetaryValue.classList.add('value');
-          monetaryValue.innerText = d.amount;
-
-          const unitText = document.createElement('p');
-          unitText.innerText = "(unidade)";
-          unitText.classList.add('small-text');
-
-          monetaryDiv.appendChild(monetarySufix);
-          monetaryDiv.appendChild(monetaryValue);
-          monetaryDiv.appendChild(unitText);
-
-          itemDiv.appendChild(monetaryDiv);
-
-          contentSection.appendChild(itemDiv);
-        })
+        data.forEach((d) => contentSection.appendChild(makeItemRender(d)))
       });
     })
 
@@ -245,41 +193,7 @@
       itemsContentDiv.removeChild(loading)
       const contentSection = document.getElementById('items-content');
 
-      data.forEach((d) => {
-        const itemDiv = document.createElement('div');
-        itemDiv.classList.add('item');
-
-        const itemImg = document.createElement('img');
-        itemImg.src = d.image;
-
-        const itemH3 = document.createElement('h3');
-        itemH3.innerText = d.name;
-
-        itemDiv.appendChild(itemImg);
-        itemDiv.appendChild(itemH3);
-
-        const monetaryDiv = document.createElement('div');
-        monetaryDiv.classList.add('monetary-info');
-
-        const monetarySufix = document.createElement('p');
-        monetarySufix.innerText = d.sufix;
-
-        const monetaryValue = document.createElement('p');
-        monetaryValue.classList.add('value');
-        monetaryValue.innerText = d.amount;
-
-        const unitText = document.createElement('p');
-        unitText.innerText = "(unidade)";
-        unitText.classList.add('small-text');
-
-        monetaryDiv.appendChild(monetarySufix);
-        monetaryDiv.appendChild(monetaryValue);
-        monetaryDiv.appendChild(unitText);
-
-        itemDiv.appendChild(monetaryDiv);
-
-        contentSection.appendChild(itemDiv);
-      })
+      data.forEach((d) => contentSection.appendChild(makeItemRender(d)))
     });
 
     const swiper = new Swiper('.swiper', {

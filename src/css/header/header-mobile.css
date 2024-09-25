@@ -1,0 +1,23 @@
+@media screen and (max-width: 600px) {
+    header {
+        padding: 2em 2em !important;
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+
+    .header-logo {
+        text-align: center !important;
+        font-size: 30px !important;
+    }
+
+    .header-icons {
+        justify-content: center !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
+
+    .header-icons button {
+        font-size: 80px !important;
+    }
+}
