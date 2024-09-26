@@ -1,0 +1,92 @@
+#navbar {
+    display: none;
+
+    position: absolute;
+    width: 70vw;
+    min-height: 100vh;
+    box-sizing: border-box;
+
+    background-color: white;
+    z-index: 1000;
+
+    flex-direction: column;
+
+    box-shadow: 8px 8px 30px black;
+}
+
+@keyframes slideIn {
+    from {
+        left: -800px; /* Posição inicial (fora da tela) */
+    }
+    to {
+        left: 0; /* Posição final (dentro da tela) */
+    }
+}
+
+@keyframes slideOut {
+    from {
+        left: 0; /* Posição inicial (dentro da tela) */
+    }
+    to {
+        left: -800px; /* Posição final (fora da tela) */
+    }
+}
+
+#navbar .nav-header {
+    padding: 20px 0;
+    display: flex;
+    height: 10vh;
+    background-color: var(--primary-color);
+
+    justify-content: start;
+    align-items: center;
+}
+
+#navbar .nav-header .avatar {
+    margin: 0 40px;
+    width: 20%;
+    height: 70%;
+    border-radius: 100%;
+    box-shadow: 1px 1px 30px black;
+}
+
+
+#navbar .nav-header .title {
+    font-style: italic;
+    color: white;
+    font-size: 40px;
+}
+
+#navbar .nav-content {
+    padding: 20px 0 20px 40px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    justify-content: start;
+    background-color: var(--gray-color);
+}
+
+#navbar .nav-content a {
+    font-size: 40px;
+    padding: 20px;
+    text-decoration: none;
+    color: white;
+    gap: 20px;
+    display: flex;
+}
+
+#navbar .nav-content a i{
+    color: var(--primary-color);
+}
+
+#overlay {
+    position: fixed; /* Fica fixo na tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro e embassado */
+    display: none; /* Inicialmente oculto */
+    z-index: 10; /* Fica atrás da div, mas na frente do fundo */
+}

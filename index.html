@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="src/css/mobile/products.css">
     <link rel="stylesheet" href="src/css/mobile/items.css">
     <link rel="stylesheet" href="src/css/mobile/footer.css">
+    <link rel="stylesheet" href="src/css/mobile/nav-bar.css">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,6 +25,18 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 <body>
+    <section id="navbar">
+        <div class="nav-header">
+            <img class="avatar" src="src/images/avatar.jpg">
+            <div class="title"><h3>Olá, visitante</h3></div>
+        </div>
+        <div class="nav-content">
+            <a href="/"><i class="fa-solid fa-home"></i>Home</a>
+            <a href="#"><i class="fa-solid fa-user"></i>Minha Conta</a>
+            <a href="#"><i class="fa fa-shopping-cart"></i>Meus Pedidos</a>
+        </div>
+    </section>
+    <section id="overlay"></section>
     <header>
       <section class="header container">
           <div class="logo">
@@ -90,7 +103,6 @@
           </div>
       </section>
   </footer>
-
     <section id="toast"></section>
 
     <script src="src/js/populate-products.js"></script>
@@ -168,6 +180,9 @@
                 },
                 height: 800
             });
+
+            document.addEventListener('click', (e) => hiddenMenu());
+            document.getElementById('mobile-menu').addEventListener('click', () => showMenu());
         })
     </script>
 </body>

@@ -1,9 +1,10 @@
 :root {
-    --primary-color: #1899d5;
+    --primary-color: rgb(24, 153, 213);
     --white-color: #FFFFFF;
     --gold-color: #FFC400;
     --error-color: #ff0000;
     --success-color: #3f8b38;
+    --gray-color: #525050;
 }
 
 html, body{
