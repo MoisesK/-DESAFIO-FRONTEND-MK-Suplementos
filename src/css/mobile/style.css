@@ -2,6 +2,8 @@
     --primary-color: #1899d5;
     --white-color: #FFFFFF;
     --gold-color: #FFC400;
+    --error-color: #ff0000;
+    --success-color: #3f8b38;
 }
 
 html, body{
@@ -31,7 +33,8 @@ button {
     padding: 2em 2em;
 }
 
-.error {color: red}
+.error {background-color: var(--error-color)}
+.success {background-color: var(--success-color)}
 
 .small-text {
     font-size: 20px !important;
@@ -60,3 +63,22 @@ button {
     100% { transform: rotate(360deg); }
 }
 
+#toast {
+    width: 60vw;
+    height: 5vh;
+
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+
+    color: white;
+    font-size: 40px;
+
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    transition: opacity 0.5s ease;
+    opacity: 1;
+}

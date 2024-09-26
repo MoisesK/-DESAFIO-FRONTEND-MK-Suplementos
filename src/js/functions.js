@@ -14,3 +14,16 @@ function makeLoading() {
 
     return loading;
 }
+
+function toast(message = 'Erro', type = 'error') {
+    const toast = document.getElementById('toast')
+    toast.textContent = message;
+
+    toast.classList.add(type);
+    toast.style.opacity = '1';
+
+    setTimeout(() => {
+        toast.classList.remove(type);
+        toast.style.opacity = '0';
+    }, 3000);
+}

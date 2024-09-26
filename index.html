@@ -91,6 +91,8 @@
       </section>
   </footer>
 
+    <section id="toast"></section>
+
     <script src="src/js/populate-products.js"></script>
     <script src="src/js/functions.js"></script>
     <script>
@@ -107,7 +109,7 @@
                 if (email.value.length == 0) {
                     email.style.border = '2px red solid';
 
-                    alert('Campo de email não pode está vazio!');
+                    toast('Campo de email não pode está vazio!');
                     return;
                 }
 
@@ -115,13 +117,14 @@
                     email.style.border = '2px red solid';
                     email.style.borderRight = 'none';
 
-                    alert('Email inválido');
+                    toast('Email informado está no formato inválido.');
+
                     return;
                 }
 
                 email.style.border = 'darkgray solid 1pt';
 
-                alert(`O email '${email.value}' foi inscrito em nossa newsletter!`);
+                toast(`O email '${email.value}' foi inscrito em nossa newsletter!`, 'success');
 
                 email.value = '';
             })
