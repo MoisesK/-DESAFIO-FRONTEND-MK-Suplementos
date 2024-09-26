@@ -3,24 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>MK Suplementos</title>
-    <link rel="stylesheet" type="text/css" href="src/css/style.css">
 
-    <link rel="stylesheet" type="text/css" href="src/css/header/header-mobile.css">
-    <link rel="stylesheet" type="text/css" href="src/css/header/header-tablet.css">
-    <link rel="stylesheet" type="text/css" href="src/css/header/header.css">
-
-    <link rel="stylesheet" type="text/css" href="src/css/promotion/promotion.css">
-    <link rel="stylesheet" type="text/css" href="src/css/promotion/promotion-filter-mobile.css">
-
-    <link rel="stylesheet" type="text/css" href="src/css/promotion/item/promotion-item.css">
-    <link rel="stylesheet" type="text/css" href="src/css/promotion/item/promotion-item-mobile.css">
-
-    <link rel="stylesheet" type="text/css" href="src/css/input.css">
-
-    <link rel="stylesheet" type="text/css" href="src/css/footer/footer.css">
-    <link rel="stylesheet" type="text/css" href="src/css/footer/footer-tablet.css">
-    <link rel="stylesheet" type="text/css" href="src/css/footer/footer-mobile.css">
-
+    <link rel="stylesheet" href="src/css/mobile/style.css">
+    <link rel="stylesheet" href="src/css/mobile/header.css">
+    <link rel="stylesheet" href="src/css/mobile/products.css">
+    <link rel="stylesheet" href="src/css/mobile/items.css">
+    <link rel="stylesheet" href="src/css/mobile/footer.css">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,175 +24,148 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 <body>
-  <main>
     <header>
-      <div class="header-logo">
-        <h1>
-          <i class="fa-solid fa-star"></i>
-          MK Suplementos
-        </h1>
-      </div>
-      <div class="header-icons">
-        <button class="material-symbols-outlined">person</button>
-        <button class="material-symbols-outlined">shopping_cart</button>
-      </div>
-    </header>
-    
-    <section id="carrousel" class="banner-section">
-      <div class="swiper">
-        <div class="swiper-wrapper">
-            <img class="swiper-slide" src="src/images/banner.jpeg" alt="banner" >
-            <img class="swiper-slide" src="src/images/banner2.jpg" alt="banner" >
-        </div>
-      </div>
-    </section>
-
-    <section class="promotion">
-      <div class="container header-content">
-        <div>
-          <p><b>PROMOÇÕES</b></p>
-        </div>
-
-        <div class="product-filter">
-          <p class="product-count">9 produtos</p>
+      <section class="header container">
+          <div class="logo">
+              <button id="mobile-menu" class="material-symbols-outlined">menu</button>
+              <h1><i class="fa-solid fa-star"></i>MK Suplementos</h1>
+              <button id="mobile-cart-icon" class="material-symbols-outlined">shopping_cart</button>
+          </div>
           <div class="filter">
-            <input id="filter-input" class="input-entry" placeholder="Digite o nome do produto">
-            <button id="filter-search" class="material-symbols-outlined">search</button>
+              <div class="search-form">
+                  <form>
+                      <input id="filter-input" placeholder="Pesquisar produto">
+                      <button id="filter-search" class="material-symbols-outlined">search</button>
+                  </form>
+              </div>
           </div>
-        </div>
-      </div>
+      </section>
+    </header>
+  <main>
+      <section id="carrousel" class="banner-section">
+          <div class="swiper">
+              <div class="swiper-wrapper">
+                  <img class="swiper-slide" src="src/images/banner.jpeg" alt="banner" >
+                  <img class="swiper-slide" src="src/images/banner2.jpg" alt="banner" >
+              </div>
+          </div>
+      </section>
 
-      <div class="product-filter-mobile">
-        <div>
-          <input id="filter-input-mobile" class="input-entry" placeholder="Digite o nome do produto">
-        </div>
-        <div>
-          <button id="filter-search-mobile" class="material-symbols-outlined">search</button>
-        </div>
-      </div>
+      <section class="container products">
+          <div class="informations">
+              <h3>PROMOÇÕES</h3>
+          </div>
+          <div id="items-count" class="items-count"></div>
+      </section>
 
-      <hr>
-      <div id="items-content" class="container items-content"></div>
-    </section>
+      <section class="container items-content">
+          <div id="items-content" class="content"></div>
+      </section>
   </main>
+  <footer class="container">
+      <section class="navigation">
+          <a><span>Contato</span></a>
+          <a><span>Termos e Serviço</span></a>
+          <a><span>Política de Privacidade</span></a>
+          <a><span>Cancelamento, troca e reembolso</span></a>
+      </section>
 
-  <footer>
-  <hr>
-    <section class="footer-navigation">
-      <div class="container nav">
-        <a><span>Contato</span></a>
-        <a><span>Termos e Serviço</span></a>
-        <a><span>Política de Privacidade</span></a>
-        <a><span>Cancelamento, troca e reembolso</span></a>
-      </div>
-
-      <div class="container newsletter">
-        <form id="newsletter-subcription">
-          <div class="input">
-            <label for="newsletter-mail">Newsletter</label>
-            <input type="email" id="newsletter-mail" class="input-entry" placeholder="Digite seu melhor email">
+      <section class="newsletter">
+          <form id="newsletter-subcription">
+                <label for="newsletter-mail">Newsletter</label>
+              <div class="input">
+                  <input type="email" id="newsletter-mail" class="input-entry" placeholder="Digite seu melhor email">
+                  <button id="newsletter-subscription-button" form="newsletter-subcription" type="submit">Inscrever</button>
+              </div>
+          </form>
+      </section>
+      <section class="container medias">
+          <div class="social">
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-square-facebook"></i>
           </div>
-          <button id="newsletter-subscription-button" form="newsletter-subcription" type="submit">Inscrever</button>
-        </form>
-      </div>
-    </section>
-    <hr>
 
-    <section class="container footer-social">
-      <div class="media">
-        <i class="fa-brands fa-instagram"></i>
-        <i class="fa-brands fa-square-facebook"></i>
-      </div>
-
-      <div class="payments">
-        <img src="src/images/metodos-pagamento.webp">
-      </div>
-    </section>
+          <div class="payments">
+              <img src="src/images/metodos-pagamento.webp">
+          </div>
+      </section>
   </footer>
 
-  <script src="src/js/populate-products.js"></script>
-  <script src="src/js/functions.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const loading = makeLoading();
+    <script src="src/js/populate-products.js"></script>
+    <script src="src/js/functions.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loading = makeLoading();
 
-    const itemsContentDiv = document.getElementById('items-content');
-    itemsContentDiv.appendChild(loading);
+            const itemsContentDiv = document.getElementById('items-content');
+            itemsContentDiv.appendChild(loading);
 
-    document.getElementById('newsletter-subscription-button').addEventListener('click', (e) => {
-      e.preventDefault();
-      const email = document.getElementById('newsletter-mail');
+            document.getElementById('newsletter-subscription-button').addEventListener('click', (e) => {
+                e.preventDefault();
+                const email = document.getElementById('newsletter-mail');
 
-      if (email.value.length == 0) {
-        email.style.border = '2px red solid';
+                if (email.value.length == 0) {
+                    email.style.border = '2px red solid';
 
-        alert('Campo de email não pode está vazio!');
-        return;
-      }
+                    alert('Campo de email não pode está vazio!');
+                    return;
+                }
 
-      if (!validateEmail(email.value)) {
-        email.style.border = '2px red solid';
-        email.style.borderRight = 'none';
+                if (!validateEmail(email.value)) {
+                    email.style.border = '2px red solid';
+                    email.style.borderRight = 'none';
 
-        alert('Email inválido');
-        return;
-      }
+                    alert('Email inválido');
+                    return;
+                }
 
-      email.style.border = 'darkgray solid 1pt';
+                email.style.border = 'darkgray solid 1pt';
 
-      alert(`O email '${email.value}' foi inscrito em nossa newsletter!`);
+                alert(`O email '${email.value}' foi inscrito em nossa newsletter!`);
 
-      email.value = '';
-    })
+                email.value = '';
+            })
 
-    document.getElementById('filter-search').addEventListener('click', (e) => {
-      e.preventDefault();
-      itemsContentDiv.innerHTML = '';
+            document.getElementById('filter-search').addEventListener('click', (e) => {
+                e.preventDefault();
+                itemsContentDiv.innerHTML = '';
 
-      itemsContentDiv.appendChild(loading);
+                itemsContentDiv.appendChild(loading);
 
-      const input = document.getElementById('filter-input');
+                const input = document.getElementById('filter-input');
 
-      searchProduct(input.value).then((data) => {
-        itemsContentDiv.removeChild(loading)
-        const contentSection = document.getElementById('items-content');
+                searchProduct(input.value).then((r) => {
+                    itemsContentDiv.removeChild(loading)
+                    const contentSection = document.getElementById('items-content');
 
-        data.forEach((d) => contentSection.appendChild(makeItemRender(d)))
-      });
-    })
+                    r.forEach((d) => contentSection.appendChild(makeItemRender(d)))
 
-    document.getElementById('filter-search-mobile').addEventListener('click', (e) => {
-      e.preventDefault();
-      itemsContentDiv.innerHTML = '';
+                    const itensCount = document.getElementById('items-count')
+                    itensCount.innerHTML = `<h3>${r.length} Encontrados</h3>`;
+                });
+            })
 
-      itemsContentDiv.appendChild(loading);
 
-      const input = document.getElementById('filter-input-mobile');
+            populateProducts().then((r) => {
+                itemsContentDiv.removeChild(loading)
+                const contentSection = document.getElementById('items-content');
 
-      searchProduct(input.value).then((data) => {
-        itemsContentDiv.removeChild(loading)
-        const contentSection = document.getElementById('items-content');
+                r.forEach((d) => contentSection.appendChild(makeItemRender(d)))
 
-        data.forEach((d) => contentSection.appendChild(makeItemRender(d)))
-      });
-    })
+                const itensCount = document.getElementById('items-count')
+                itensCount.innerHTML = `<h3>${r.length} Produtos</h3>`;
 
-    populateProducts().then((data) => {
-      itemsContentDiv.removeChild(loading)
-      const contentSection = document.getElementById('items-content');
+            });
 
-      data.forEach((d) => contentSection.appendChild(makeItemRender(d)))
-    });
-
-    const swiper = new Swiper('.swiper', {
-      direction: 'horizontal',
-      loop: true,
-      autoplay: {
-        delay: 8000,
-      },
-      height: 800
-    });
-  })
-</script>
+            const swiper = new Swiper('.swiper', {
+                direction: 'horizontal',
+                loop: true,
+                autoplay: {
+                    delay: 8000,
+                },
+                height: 800
+            });
+        })
+    </script>
 </body>
 </html>

@@ -13,11 +13,15 @@ header {
     text-align: end;
 }
 
-.header-icons button {
+button {
     color: var(--primary-color);
     font-size: 39px;
     background: none;
     border: none;
     cursor: pointer;
+}
+
+#mobile-menu {
+    display: none;
 }
 

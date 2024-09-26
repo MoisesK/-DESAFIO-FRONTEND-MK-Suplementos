@@ -1,0 +1,16 @@
+.products {
+    display: flex;
+    justify-content: space-between;
+    border: 1px #A5A1A1 solid;
+
+    padding: 0 2em !important;
+}
+
+
+.products .informations h3{
+    font-size: 50px;
+}
+
+.products .items-count h3{
+    font-size: 50px;
+}

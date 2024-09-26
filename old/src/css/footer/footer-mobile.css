@@ -1,6 +1,6 @@
-@media screen and (min-width: 425px) and (max-width: 1024px) {
+@media screen and (min-width: 600px) {
     footer {
-        height: 30vh;
+        height: 30%;
     }
 
     footer .footer-navigation {
@@ -21,12 +21,11 @@
 
     footer .newsletter {
         width: 100%;
-        margin: 40px 0;
+        margin: 40px 30px;
     }
 
     footer .newsletter form {
-        margin: -24px;
-        width: 90%;
+        width: 100%;
         align-items: start;
         display: block;
     }

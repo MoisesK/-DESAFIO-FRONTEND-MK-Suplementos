@@ -1,6 +1,6 @@
 async function populateProducts() {
     try {
-        const response = await fetch('src/js/products.json');
+        const response = await fetch('api/products.php?action=getProducts');
 
         if (!response.ok) {
             console.log('Erro ao recuperar dados dos produtos.')
@@ -16,7 +16,7 @@ async function populateProducts() {
 
 async function searchProduct(term) {
     try {
-        const response = await fetch('src/js/products.json');
+        const response = await fetch('api/products.php?action=getProducts');
 
         if (!response.ok) {
             console.log('Erro ao recuperar dados dos produtos.')
@@ -40,24 +40,18 @@ function makeItemRender(item) {
     const itemDiv = document.createElement('div');
     itemDiv.classList.add('item');
 
-    let stars = '';
-
-    for (let i = 0; i < item.stars; i++)
-        stars = stars + '<span class="fa-solid fa-star"></span>';
-
     itemDiv.innerHTML = `
-          <div class="image">
             <img src="${item.image}">
-          </div>
+            <div class="info-content">
+                <h3>${item.name}</h3>
+                <div class="monetary-info">
+                    <p>${item.sufix}</p>
+                    <p class="value">${item.amount}</p>
+                    <p class="small-text">(unidade)</p>
 
-          <div class="details">
-              <div><span class="title">${item.name}</span></div>
-              <div class="stars">
-                  ${stars}
-              </div>
-              <div class="amount">R$ ${item.amount}</div>
-          </div>
-        `;
+                </div>
+            </div>
+            `;
 
     return itemDiv;
 }

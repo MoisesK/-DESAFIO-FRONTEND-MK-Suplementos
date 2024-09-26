@@ -1,0 +1,68 @@
+header {
+    width: 100%;
+    max-height: 40em;
+    display: block;
+}
+
+.header {
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.header .logo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header .logo h1 {
+    color: var(--white-color);
+    font-size: 50px;
+}
+
+.header .logo button {
+    font-size: 70px;
+}
+
+.header .filter {
+    width: 100%;
+}
+
+.header .filter .search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+.header .filter .search-form form{
+    display: flex;
+    width: 98%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+
+    border-radius: 15px;
+    padding: 10px 10px;
+    border: black 1px solid;
+}
+
+.header .filter .search-form input{
+    width: 90%;
+    padding: 10px;
+    font-size: 40px;
+    border: none;
+}
+
+.header .filter .search-form input:focus{
+    outline: 0;
+}
+
+.header .filter .search-form button{
+    color: black;
+    font-weight: normal;
+    font-size: 60px;
+    font-weight: bolder;
+}
