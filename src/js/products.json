@@ -1,74 +1,65 @@
 [
   {
     "id": 1,
-    "name": "BEBIDA LÁCTEA UHT DE PROTEÍNAS",
+    "name": "MECHAS NA TOUCA",
+    "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     "stars": 5,
-    "image": "https://www.gsuplementos.com.br/upload/produto/layout/2200/growth-whey-pronto-growth-supplements-v2.webp",
-    "amount": "5,67",
-    "sufix": "R$"
+    "image": "src/images/mechas.jpeg",
+    "amount": "230,00",
+    "sufix": "(A partir)"
   },
   {
     "id": 2,
-    "name": "Biscoitos com Proteínas Vegetais",
-    "stars": 3,
-    "image": "https://www.gsuplementos.com.br/upload/produto/layout/2209/biscoitos-com-proteina-vegetal-growth-supplements.webp",
-    "amount": "8,10",
-    "sufix": "R$"
+    "name": "MECHAS NA TOUCA",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    "stars": 5,
+    "image": "src/images/mechas.jpeg",
+    "amount": "230,00",
+    "sufix": "(A partir)"
   },
   {
     "id": 3,
-    "name": "Multivitamínico Vegano 120Comp",
+    "name": "MECHAS NA TOUCA",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     "stars": 5,
-    "image": "https://www.gsuplementos.com.br/upload/produto/layout/1903/multivitaminico-vegano-120comp-growth-supplements-v4.webp",
-    "amount": "67,50",
-    "sufix": "R$"
+    "image": "src/images/mechas.jpeg",
+    "amount": "230,00",
+    "sufix": "(A partir)"
   },
   {
     "id": 4,
-    "name": "HAIR E NAILS 120COMP",
-    "stars": 2,
-    "image": "https://www.gsuplementos.com.br/upload/produto/layout/1876/hairenails-120comp-growth-supplements-v2.webp",
-    "amount": "54,00",
-    "sufix": "R$"
+    "name": "MECHAS NA TOUCA",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    "stars": 5,
+    "image": "src/images/mechas.jpeg",
+    "amount": "230,00",
+    "sufix": "(A partir)"
   },
   {
     "id": 5,
-    "name": "IMUNIDADE KIDS GUMMY 30UN",
-    "stars": 2,
-    "image": "https://www.gsuplementos.com.br/upload/produto/layout/1766/gummy-imunidade-kids-30un-growth-supplements-mobile-v5.webp",
-    "amount": "36,00",
-    "sufix": "R$"
+    "name": "MECHAS NA TOUCA",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    "stars": 5,
+    "image": "src/images/mechas.jpeg",
+    "amount": "230,00",
+    "sufix": "(A partir)"
   },
   {
     "id": 6,
-    "name": "Chocolate Fit - Display C/ 8Un.",
+    "name": "MECHAS NA TOUCA",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     "stars": 5,
-    "image": "https://www.gsuplementos.com.br/upload/produto/layout/1793/chocolate-fit-25g-growth-supplements-v3.webp",
-    "amount": "29,70",
-    "sufix": "R$"
+    "image": "src/images/mechas.jpeg",
+    "amount": "230,00",
+    "sufix": "(A partir)"
   },
   {
     "id": 7,
-    "name": "paçoca com whey protein (Display c/ 12 un)",
-    "stars": 4,
-    "image": "https://www.gsuplementos.com.br/upload/produto/layout/1690/pacoca-whey-23g-growth-supplements-v3.webp",
-    "amount": "22,50",
-    "sufix": "R$"
-  },
-  {
-    "id": 8,
-    "name": "Barra de Nuts - Display C/ 12 Un.",
-    "stars": 4,
-    "image": "https://www.gsuplementos.com.br/upload/growth-layout-personalizado/produto/1666/barra-de-nuts-growth-supplements-v3.png",
-    "amount": "43,20",
-    "sufix": "R$"
-  },
-  {
-    "id": 9,
-    "name": "Pasta de Amendoim Crocante 500g",
+    "name": "MECHAS NA TOUCA",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     "stars": 5,
-    "image": "https://www.gsuplementos.com.br/upload/produto/layout/1634/produto01-v2.webp",
-    "amount": "25,20",
-    "sufix": "R$"
+    "image": "src/images/mechas.jpeg",
+    "amount": "230,00",
+    "sufix": "(A partir)"
   }
 ]

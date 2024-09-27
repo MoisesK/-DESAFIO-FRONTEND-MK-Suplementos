@@ -77,7 +77,7 @@
 }
 
 #navbar .nav-content a i{
-    color: var(--primary-color);
+    color: var(--icons-color);
 }
 
 #overlay {

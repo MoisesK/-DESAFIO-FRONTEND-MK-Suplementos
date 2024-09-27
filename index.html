@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <title>MK Suplementos</title>
 
-    <link rel="stylesheet" href="src/css/mobile/style.css">
+    <link rel="stylesheet" href="src/css/mobile/global.css">
     <link rel="stylesheet" href="src/css/mobile/header.css">
-    <link rel="stylesheet" href="src/css/mobile/products.css">
-    <link rel="stylesheet" href="src/css/mobile/items.css">
+    <link rel="stylesheet" href="src/css/mobile/home/products.css">
+    <link rel="stylesheet" href="src/css/mobile/home/items.css">
     <link rel="stylesheet" href="src/css/mobile/footer.css">
     <link rel="stylesheet" href="src/css/mobile/nav-bar.css">
 
@@ -25,84 +25,104 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 <body>
-    <section id="navbar">
-        <div class="nav-header">
-            <img class="avatar" src="src/images/avatar.jpg">
-            <div class="title"><h3>Olá, visitante</h3></div>
-        </div>
-        <div class="nav-content">
-            <a href="/"><i class="fa-solid fa-home"></i>Home</a>
-            <a href="#"><i class="fa-solid fa-user"></i>Minha Conta</a>
-            <a href="#"><i class="fa fa-shopping-cart"></i>Meus Pedidos</a>
-        </div>
+    <section id="platform-content">
+
+        <section id="navbar">
+            <div class="nav-header">
+                <img class="avatar" src="src/images/avatar.jpg">
+                <div class="title"><h3>Olá, visitante</h3></div>
+            </div>
+            <div class="nav-content">
+                <a href="/selfcare/index.html"><i class="fa-solid fa-home"></i>Home</a>
+                <a href="#"><i class="fa-solid fa-user"></i>Minha Conta</a>
+                <a href="#"><i class="fa fa-shopping-cart"></i>Meus Pedidos</a>
+            </div>
+        </section>
+        <section id="overlay"></section>
+        <header>
+          <section class="header container">
+              <div class="logo">
+                  <button id="mobile-menu" class="material-symbols-outlined">menu</button>
+                  <h1>Espaço Divas</h1>
+                  <button id="mobile-cart-icon" class="material-symbols-outlined">shopping_cart</button>
+              </div>
+              <div class="filter">
+                  <div class="search-form">
+                      <form>
+                          <input id="filter-input" placeholder="Pesquisar produto">
+                          <button id="filter-search" class="material-symbols-outlined">search</button>
+                      </form>
+                  </div>
+              </div>
+          </section>
+        </header>
+      <main>
+          <section id="carrousel" class="banner-section">
+              <div class="swiper">
+                  <div class="swiper-wrapper">
+                      <img class="swiper-slide" src="src/images/banner.jpg" alt="banner" >
+                      <img class="swiper-slide" src="src/images/banner2.jpg" alt="banner" >
+                  </div>
+              </div>
+          </section>
+
+          <section class="container products">
+              <div class="informations">
+                  <h3>PROMOÇÕES</h3>
+              </div>
+              <div id="items-count" class="items-count"></div>
+          </section>
+
+          <section class="container items-content">
+              <div id="items-content" class="content"></div>
+          </section>
+      </main>
+      <footer class="container">
+          <section class="navigation">
+              <a><span>Termos e Serviço</span></a>
+              <a><span>Política de Privacidade</span></a>
+              <a ><span onclick="cancelTerm()">Cancelamento e reembolso</span></a>
+              <div id="cancel-term" class="cancel-term">
+                  <h1>Política de Cancelamento de Serviço</h1>
+                  <p>Agradecemos por escolher nossos serviços. Para garantir uma experiência justa e transparente, estabelecemos a seguinte política de cancelamento:</p>
+
+                  <h2>Prazo para Cancelamento</h2>
+                  <p>O cliente pode solicitar o cancelamento do serviço até 2 (dois) dias antes da data programada. Cancelamentos feitos dentro desse prazo não serão reembolsados.</p>
+
+                  <h2>Reembolso</h2>
+                  <p>O reembolso será efetuado apenas se o cancelamento for realizado dentro do prazo estabelecido. O valor total pago será reembolsado em até 7 (sete) dias úteis após a confirmação do cancelamento.</p>
+
+                  <h2>Exceções</h2>
+                  <p>Não haverá reembolso em casos de não comparecimento ou cancelamentos feitos após o prazo de 2 dias.</p>
+
+                  <h2>Alterações de Data</h2>
+                  <p>Caso o cliente deseje alterar a data do serviço, essa solicitação deve ser feita com pelo menos 2 (dois) dias de antecedência. Faremos o possível para atender a nova data solicitada, sujeita à disponibilidade.</p>
+
+              </div>
+          </section>
+
+          <section class="newsletter">
+              <form id="newsletter-subcription">
+                    <label for="newsletter-mail">Promoções</label>
+                  <div class="input">
+                      <input type="email" id="newsletter-mail" class="input-entry" placeholder="Digite seu melhor email">
+                      <button id="newsletter-subscription-button" form="newsletter-subcription" type="submit">Inscrever</button>
+                  </div>
+              </form>
+          </section>
+          <section class="container medias">
+              <div class="social">
+                  <a><i class="fa-brands fa-instagram"></i></a>
+                  <a href="https://api.whatsapp.com/send/?phone=5585985473412&text=Ola%2C%20Espa%C3%A7o%20divas.%20Vim%20pelo%20site%20e%20gostaria%20de%20algumas%20informa%C3%A7%C3%B5es." target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+              </div>
+
+              <div class="payments">
+                  <img src="src/images/metodos-pagamento.webp">
+              </div>
+          </section>
+      </footer>
     </section>
-    <section id="overlay"></section>
-    <header>
-      <section class="header container">
-          <div class="logo">
-              <button id="mobile-menu" class="material-symbols-outlined">menu</button>
-              <h1><i class="fa-solid fa-star"></i>MK Suplementos</h1>
-              <button id="mobile-cart-icon" class="material-symbols-outlined">shopping_cart</button>
-          </div>
-          <div class="filter">
-              <div class="search-form">
-                  <form>
-                      <input id="filter-input" placeholder="Pesquisar produto">
-                      <button id="filter-search" class="material-symbols-outlined">search</button>
-                  </form>
-              </div>
-          </div>
-      </section>
-    </header>
-  <main>
-      <section id="carrousel" class="banner-section">
-          <div class="swiper">
-              <div class="swiper-wrapper">
-                  <img class="swiper-slide" src="src/images/banner.jpeg" alt="banner" >
-                  <img class="swiper-slide" src="src/images/banner2.jpg" alt="banner" >
-              </div>
-          </div>
-      </section>
 
-      <section class="container products">
-          <div class="informations">
-              <h3>PROMOÇÕES</h3>
-          </div>
-          <div id="items-count" class="items-count"></div>
-      </section>
-
-      <section class="container items-content">
-          <div id="items-content" class="content"></div>
-      </section>
-  </main>
-  <footer class="container">
-      <section class="navigation">
-          <a><span>Contato</span></a>
-          <a><span>Termos e Serviço</span></a>
-          <a><span>Política de Privacidade</span></a>
-          <a><span>Cancelamento, troca e reembolso</span></a>
-      </section>
-
-      <section class="newsletter">
-          <form id="newsletter-subcription">
-                <label for="newsletter-mail">Newsletter</label>
-              <div class="input">
-                  <input type="email" id="newsletter-mail" class="input-entry" placeholder="Digite seu melhor email">
-                  <button id="newsletter-subscription-button" form="newsletter-subcription" type="submit">Inscrever</button>
-              </div>
-          </form>
-      </section>
-      <section class="container medias">
-          <div class="social">
-              <i class="fa-brands fa-instagram"></i>
-              <i class="fa-brands fa-square-facebook"></i>
-          </div>
-
-          <div class="payments">
-              <img src="src/images/metodos-pagamento.webp">
-          </div>
-      </section>
-  </footer>
     <section id="toast"></section>
 
     <script src="src/js/populate-products.js"></script>
@@ -136,7 +156,7 @@
 
                 email.style.border = 'darkgray solid 1pt';
 
-                toast(`O email '${email.value}' foi inscrito em nossa newsletter!`, 'success');
+                toast(`O email ${email.value} foi inscrito em nosso catálogo de promoções!`, 'success');
 
                 email.value = '';
             })
@@ -148,8 +168,13 @@
                 itemsContentDiv.appendChild(loading);
 
                 const input = document.getElementById('filter-input');
-
                 searchProduct(input.value).then((r) => {
+                    if (r.length === 0) {
+                        itemsContentDiv.removeChild(loading)
+                        document.getElementById('items-content').appendChild(notFoundMessage());
+                        return;
+                    }
+
                     itemsContentDiv.removeChild(loading)
                     const contentSection = document.getElementById('items-content');
 
@@ -169,6 +194,13 @@
                 const itensCount = document.getElementById('items-count')
                 itensCount.innerHTML = `<h3>${r.length} Produtos</h3>`;
 
+                document.querySelectorAll('[id^="more-informations-button-"]').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        // document.location.href = '/details.html/' + e.target.value;
+
+                        document.location.href = '/selfcare/details.html';
+                    });
+                });
             });
 
             const swiper = new Swiper('.swiper', {

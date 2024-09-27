@@ -15,6 +15,20 @@ function makeLoading() {
     return loading;
 }
 
+function notFoundMessage(message = 'Nenhum serviço encontrado!') {
+    const div = document.createElement('div');
+    div.classList.add('center-item');
+
+    const text = document.createElement('span');
+    text.classList.add('medium-text');
+
+    text.innerText = message;
+
+    div.appendChild(text);
+
+    return div;
+}
+
 function toast(message = 'Erro', type = 'error') {
     const toast = document.getElementById('toast')
     toast.textContent = message;
@@ -23,8 +37,8 @@ function toast(message = 'Erro', type = 'error') {
     toast.style.opacity = '1';
 
     setTimeout(() => {
-        toast.classList.remove(type);
         toast.style.opacity = '0';
+        toast.classList.remove(type);
     }, 3000);
 }
 
@@ -63,4 +77,9 @@ function hiddenMenu() {
             menuActive = false;
         }, 2000)
     }
+}
+
+function cancelTerm() {
+    const termSection = document.getElementById('cancel-term');
+    termSection.classList.toggle('active');
 }
