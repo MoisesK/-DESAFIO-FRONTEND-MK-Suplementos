@@ -1,0 +1,22 @@
+{
+    "name": "moises-dev/api",
+    "autoload": {
+        "psr-4": {
+            "MoisesDev\\Api\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "MoisesK",
+            "email": "moises979@gmail.com"
+        }
+    ],
+    "require": {
+        "google/apiclient": "^2.15.0"
+    },
+    "extra": {
+        "google/apiclient-services": [
+            ""
+        ]
+    },
+}
