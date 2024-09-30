@@ -1,0 +1,41 @@
+.product-card {
+    box-sizing: border-box;
+    position: sticky;
+
+    display: flex;
+    margin: 50px 20px;
+    border: solid 1px var(--white-gray-color);
+    border-radius: 5px;
+}
+
+.product-card img {
+    width: 10em;
+    border-radius: 2.5em;
+}
+
+.card-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+
+.product-card .informations {
+    padding: 0 0 0 0.8em;
+    font-size: 40px;
+}
+
+.product-card .informations h3 {
+    margin: 0;
+}
+
+.product-card .money-info {
+    padding: 0 0 0 1em;
+    font-size: 30px;
+}
+
+.product-card .money-info .amount-value{
+    font-size: 45px;
+    color: var(--gold-color);
+    font-weight: bolder;
+}

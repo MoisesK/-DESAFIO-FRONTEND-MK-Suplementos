@@ -105,8 +105,25 @@ footer .newsletter button{
 .medias .payments {
     display: flex;
     width: 70%;
+    justify-content: end;
 }
 
 .medias .payments img {
-    width: 100%;
+    text-align: end;
+    width: 70%;
+}
+
+
+.hours-work {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+
+.hours-work .title{
+    font-size: 50px;
+}
+
+.hours-work .info{
+    font-size: 30px;
 }

@@ -1,3 +1,7 @@
+.general-info {
+    padding: 4em 2em;
+}
+
 .name {
     display: flex;
     align-items: center;
@@ -36,7 +40,7 @@
     justify-content: center;
 
     font-weight: bolder;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .monetary .amount-value{
@@ -56,14 +60,14 @@
     text-align: center;
     color: var(--white-color);
 
-    width: 30%;
+    width: 40%;
     font-size: 30px;
 
     word-break: break-word;
 }
 
 .description {
-    background-color: var(--white-gray-color);
+    background-color: var(--gold-color);
 
     color: var(--white-color);
 

@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="src/css/mobile/header.css">
     <link rel="stylesheet" href="src/css/mobile/footer.css">
     <link rel="stylesheet" href="src/css/mobile/nav-bar.css">
-    <link rel="stylesheet" href="src/css/mobile/details/product.css">
-    <link rel="stylesheet" href="src/css/mobile/details/style.css">
+    <link rel="stylesheet" href="src/css/mobile/schedule/product-card.css">
+    <link rel="stylesheet" href="src/css/mobile/schedule/service-tax.css">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,12 +17,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/eb9613833e.js" crossorigin="anonymous"></script>
 
-    <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 </head>
 <body>
 <section id="platform-content">
@@ -50,40 +48,80 @@
 
     <main>
         <section class="general-info">
-            <section class="container name">
-                <div class="informations"><h3>MECHA NA TOUCA</h3></div>
-            </section>
-
-            <section id="carrousel" class="images">
-                <div class="swiper">
-                    <div class="swiper-wrapper">
-                        <img class="swiper-slide" src="src/images/mechas.jpeg" alt="banner" >
-                        <img class="swiper-slide" src="src/images/mechas.jpeg" alt="banner" >
-                    </div>
-                    <div class="swiper-pagination"></div>
+            <section class="container product-card">
+                <div class="image">
+                    <img src="src/images/mechas.jpeg" alt="banner" >
                 </div>
-            </section>
-
-            <section class="container money-info">
-                <section class="monetary">
-                    <span class="amount-value">R$ 500,00</span>
-                    <span class="amount-sufix">(a partir)</span>
-                </section>
-
-                <section class="payment-form">
-                    <p>NO PIX</p>
-                    <span>ou <strong>R$ 580,00 no cartão de crédito em até 6x sem juros.</strong></span>
-                </section>
-            </section>
-
-            <section class="container schedule">
-                <button id="schedule-this-product" class="action-button" onclick="scheduleProduct()">AGENDAR!</button>
+                <div class="card-details">
+                    <div class="container informations"><h3>MECHA NA TOUCA</h3></div>
+                    <div class="container money-info">
+                        <div class="monetary">
+                            <span class="amount-value">R$ 500,00</span>
+                            <span class="amount-sufix">(a partir)</span>
+                        </div>
+                    </div>
+                </div>
             </section>
         </section>
 
-        <section class="container description">
-            <h3>O que é este serviço?</h3>
-            <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span>
+        <section id="service-tax-step" class="container service-tax">
+            <h3><strong>* Taxa de Agendamento de Serviço</strong></h3>
+            <p>Para garantir a sua reserva e otimizar nossa agenda, adotamos um sistema de taxa de agendamento.<br> Essa taxa corresponde a 50% do valor total do serviço solicitado. A seguir, explicamos como funciona:</p>
+
+            <ol>
+                <li><strong>Segurança na Reserva:</strong> Ao pagar a taxa de 50%, você assegura sua vaga e nos ajuda a planejar melhor nossa programação. Isso evita conflitos de horário e garante que possamos dedicar a atenção necessária ao seu atendimento.</li>
+
+                <li><strong>Compromisso Mútuo:</strong> A taxa de agendamento demonstra um compromisso tanto da sua parte quanto da nossa. Com essa prática, conseguimos oferecer um serviço mais organizado e eficiente.</li>
+
+                <li><strong>Descontos e Créditos:</strong> O valor pago como taxa será descontado do valor total do serviço. Assim, quando você comparecer, pagará apenas a diferença.</li>
+
+                <li><strong>Política de Cancelamento:</strong> Caso haja necessidade de cancelamento, a taxa de agendamento não é reembolsável, uma vez que ela garante o tempo e os recursos que alocamos para seu atendimento. No entanto, podemos oferecer uma remarcação, sujeita à disponibilidade.</li>
+
+                <li><strong>Confirmação de Agendamento:</strong> Após o pagamento da taxa, você receberá uma confirmação por e-mail ou mensagem, detalhando o dia e horário agendados.</li>
+            </ol>
+
+            <p>Essa política visa proporcionar uma melhor experiência para todos os nossos clientes. Agradecemos a sua compreensão e estamos à disposição para esclarecer qualquer dúvida!</p>
+
+            <section class="continue-to-pay">
+                <button class="action-button">Prosseguir para pagamento!</button>
+                <span>*Concordo que lí sobre a taxa de serviço e quero prosseguir!*</span>
+            </section>
+        </section>
+
+        <section id="date-selection-step" class="container schedule-section">
+            <h3>Escolha a data que deseja realizar seu agendamento!</h3>
+            <div class="date-picker">
+                <input id="schedule-date" type="datetime-local" name="schedule-date" />
+            </div>
+        </section>
+
+        <section id="qrcode-step" class="container schedule-section hidden">
+            <h3>Realize o pagamento no valor de R$ 250,00</h3>
+            <div class="qr-content">
+                <img src="src/images/qrcode.png">
+                <span><i class="fa fa-clipboard"></i> Copiar código</span>
+            </div>
+
+            <button id="send-proof-file" class="action-button">Pagamento realizado!</button>
+        </section>
+
+        <section id="proof-file-step" class="container schedule-section hidden">
+            <h3>Anexe o comprovante do pagamento para confirmar seu agendamento!</h3>
+            <div class="proof-file-input">
+                <input type="file">
+            </div>
+
+            <button id="send-proof-file-archive" class="action-button">Confirmar pagamento!</button>
+        </section>
+
+        <section id="payment-confirmed-step" class="container schedule-section hidden">
+            <div class="texts">
+                <h4>Recebemos seu comprovante com sucesso e estamos analisando a vericidade dos dados enviados.</h4>
+            </div>
+            <div class="image"><img width="600" height="600" src="src/images/pagamento-confirmado.png"></div>
+            <div>
+                <button id="whatsapp-confirm" class="action-button">Confirmar via whatsapp!</button>
+            </div>
         </section>
     </main>
 
@@ -194,17 +232,30 @@
     //         });
     //     });
     //
-        const swiper = new Swiper('.swiper', {
-            direction: 'horizontal',
-            loop: true,
-            autoplay: {
-                delay: 8000,
-            }
-        });
 
-        function scheduleProduct () {
-            document.location.href = '/schedule.html';
-        }
+        document.getElementById('schedule-date').addEventListener('change', (e) => {
+            console.log(e.target.value);
+
+            document.getElementById('qrcode-step').classList.toggle('hidden')
+        })
+
+        document.getElementById('send-proof-file').addEventListener('click', (e) => {
+            document.getElementById('qrcode-step').classList.toggle('hidden')
+            document.getElementById('proof-file-step').classList.toggle('hidden')
+        })
+
+        document.getElementById('send-proof-file-archive').addEventListener('click', (e) => {
+            document.getElementById('proof-file-step').classList.toggle('hidden')
+            document.getElementById('payment-confirmed-step').classList.toggle('hidden')
+        })
+
+        document.getElementById('whatsapp-confirm').addEventListener('click', (e) => {
+            toast('Abrindo whatsapp da companhia!', 'success');
+            setInterval(() => {
+                window.open('https://api.whatsapp.com/send/?phone=5585985473412&text=Ol%C3%A1%2C%20acabei%20de%20realizar%20o%20pagamento%20do%20agendamento%20de%20um%20procedimento%20de%20MECHA%20NA%20TOUCA%20que%20possui%20o%20valor%20de%20R%24%20500%2C00.%20Gostaria%20de%20enviar%20meu%20comprovante%20de%20pagamento%20por%20aqui%20tamb%C3%A9m%20para%20agilizar%20a%20valida%C3%A7%C3%A3o%20e%20a%20confirma%C3%A7%C3%A3o%20do%20pagamento%20de%20R%24%20250%2C00%20do%20pr%C3%A9-agendamento.', '_blank');
+            }, 3000)
+        })
+
 
         document.addEventListener('click', (e) => hiddenMenu());
         document.getElementById('mobile-menu').addEventListener('click', () => showMenu());
