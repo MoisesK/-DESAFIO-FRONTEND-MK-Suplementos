@@ -69,6 +69,11 @@ input.invalid {
     font-size: 30px;
 }
 
+#nextBtn.last-step {
+    background-color: var(--success-color);
+    color: var(--white-color);
+}
+
 .qr-step {
     display: flex;
     flex-direction: column;
@@ -115,4 +120,32 @@ input.invalid {
 .proof-file-input input {
     padding: 30px 40px;
     font-size: 40px;
+}
+
+.proof-file-input input.invalid {
+    border-radius: 20px;
+}
+
+.tab .date-picker {
+    margin-bottom: 5em;
+}
+
+.tab .field-input {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.tab .field-input label {
+    align-items: start;
+    margin: 10px 0;
+    font-size: 30px;
+}
+
+.tab .field-input input {
+    width: 98%;
+    margin: 8px 0 20px 0;
+    font-size: 40px;
+    border-radius: 9px;
+    padding: 13px;
 }

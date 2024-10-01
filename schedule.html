@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="src/css/mobile/nav-bar.css">
     <link rel="stylesheet" href="src/css/mobile/schedule/product-card.css">
     <link rel="stylesheet" href="src/css/mobile/schedule/service-tax.css">
+    <link rel="stylesheet" href="src/css/mobile/schedule/schedule-form.css">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,65 +65,83 @@
             </section>
         </section>
 
-        <section id="service-tax-step" class="container service-tax">
-            <h3><strong>* Taxa de Agendamento de Serviço</strong></h3>
-            <p>Para garantir a sua reserva e otimizar nossa agenda, adotamos um sistema de taxa de agendamento.<br> Essa taxa corresponde a 50% do valor total do serviço solicitado. A seguir, explicamos como funciona:</p>
+        <form id="regForm" class="container" action="">
+            <div class="tab">
+                <h3>Escolha a data que deseja realizar seu agendamento!</h3>
+                <div class="date-picker">
+                    <input id="schedule-date" type="datetime-local" name="schedule-date" />
+                </div>
 
-            <ol>
-                <li><strong>Segurança na Reserva:</strong> Ao pagar a taxa de 50%, você assegura sua vaga e nos ajuda a planejar melhor nossa programação. Isso evita conflitos de horário e garante que possamos dedicar a atenção necessária ao seu atendimento.</li>
-
-                <li><strong>Compromisso Mútuo:</strong> A taxa de agendamento demonstra um compromisso tanto da sua parte quanto da nossa. Com essa prática, conseguimos oferecer um serviço mais organizado e eficiente.</li>
-
-                <li><strong>Descontos e Créditos:</strong> O valor pago como taxa será descontado do valor total do serviço. Assim, quando você comparecer, pagará apenas a diferença.</li>
-
-                <li><strong>Política de Cancelamento:</strong> Caso haja necessidade de cancelamento, a taxa de agendamento não é reembolsável, uma vez que ela garante o tempo e os recursos que alocamos para seu atendimento. No entanto, podemos oferecer uma remarcação, sujeita à disponibilidade.</li>
-
-                <li><strong>Confirmação de Agendamento:</strong> Após o pagamento da taxa, você receberá uma confirmação por e-mail ou mensagem, detalhando o dia e horário agendados.</li>
-            </ol>
-
-            <p>Essa política visa proporcionar uma melhor experiência para todos os nossos clientes. Agradecemos a sua compreensão e estamos à disposição para esclarecer qualquer dúvida!</p>
-
-            <section class="continue-to-pay">
-                <button class="action-button">Prosseguir para pagamento!</button>
-                <span>*Concordo que lí sobre a taxa de serviço e quero prosseguir!*</span>
-            </section>
-        </section>
-
-        <section id="date-selection-step" class="container schedule-section">
-            <h3>Escolha a data que deseja realizar seu agendamento!</h3>
-            <div class="date-picker">
-                <input id="schedule-date" type="datetime-local" name="schedule-date" />
-            </div>
-        </section>
-
-        <section id="qrcode-step" class="container schedule-section hidden">
-            <h3>Realize o pagamento no valor de R$ 250,00</h3>
-            <div class="qr-content">
-                <img src="src/images/qrcode.png">
-                <span><i class="fa fa-clipboard"></i> Copiar código</span>
+                <h3>Preencha com seus dados, para validação do agendamento!</h3>
+                <div class="customer-data">
+                    <div class="field-input">
+                        <label for="schedule-customer-name">Nome:</label>
+                        <input id="schedule-customer-name" type="text" name="schedule-name" placeholder="fulano de tal"/>
+                    </div>
+                    <div class="field-input">
+                        <label for="schedule-customer-email">Email:</label>
+                        <input id="schedule-customer-email" type="text" placeholder="email@email.com" name="schedule-email" />
+                    </div>
+                    <div class="field-input">
+                    <label for="schedule-customer-phone">Telefone:</label>
+                    <input id="schedule-customer-phone" type="text" placeholder="(85) 99999-9999" name="schedule-phone" />
+                </div>
+                </div>
             </div>
 
-            <button id="send-proof-file" class="action-button">Pagamento realizado!</button>
-        </section>
-
-        <section id="proof-file-step" class="container schedule-section hidden">
-            <h3>Anexe o comprovante do pagamento para confirmar seu agendamento!</h3>
-            <div class="proof-file-input">
-                <input type="file">
+            <div class="tab">
+                <div class="qr-step">
+                    <div class="text-section">
+                        <h3 class="medium-text">Realize o pagamento no valor</h3>
+                        <h3 class="medium-text amount-value">R$ 250,00</h3>
+                    </div>
+                    <div class="qr-content">
+                        <img src="src/images/qrcode.png">
+                        <div class="copy-section">
+                            <span><i class="fa fa-clipboard"></i></span>
+                            <input class="copy-paste-pix" value="A PIKA DO VOVO NÃO SOBE MAAAAIS" disabled>
+                        </div>
+                    </div>
+                    <div>
+                        <ol>
+                            <li>
+                                Abra o app do seu banco ou instituição
+                                financeira e entre no ambiente Pix.
+                            </li>
+                            <li>
+                                Escolha a opção pagar com qr code e escaneie ou utilize a opção copia e cola
+                                o código.
+                            </li>
+                            <li>
+                                Confirme as informações, faça o pagamento e salve o comprovante.
+                            </li>
+                            <li>
+                                Anexe o comprovante e prossiga com as etapas do agendamento.
+                            </li>
+                        </ol>
+                    </div>
+                    <div>
+                        <div class="proof-file-input">
+                            <input type="file">
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <button id="send-proof-file-archive" class="action-button">Confirmar pagamento!</button>
-        </section>
+            <div style="overflow:auto;">
+                <div style="float:right;">
+                    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Anterior</button>
+                    <button type="button" id="nextBtn" onclick="nextPrev(1)">Próximo</button>
+                </div>
+            </div>
 
-        <section id="payment-confirmed-step" class="container schedule-section hidden">
-            <div class="texts">
-                <h4>Recebemos seu comprovante com sucesso e estamos analisando a vericidade dos dados enviados.</h4>
+            <!-- Circles which indicates the steps of the form: -->
+            <div style="text-align:center;margin-top:40px;">
+                <span class="step"></span>
+                <span class="step"></span>
             </div>
-            <div class="image"><img width="600" height="600" src="src/images/pagamento-confirmado.png"></div>
-            <div>
-                <button id="whatsapp-confirm" class="action-button">Confirmar via whatsapp!</button>
-            </div>
-        </section>
+
+        </form>
     </main>
 
     <footer class="container">
@@ -233,6 +252,94 @@
     //     });
     //
 
+
+
+    var currentTab = 0; // Current tab is set to be the first tab (0)
+    showTab(currentTab); // Display the current tab
+
+    function showTab(n) {
+        // This function will display the specified tab of the form ...
+        var x = document.getElementsByClassName("tab");
+        x[n].style.display = "block";
+        // ... and fix the Previous/Next buttons:
+        if (n == 0) {
+            document.getElementById("prevBtn").style.display = "none";
+        } else {
+            document.getElementById("prevBtn").style.display = "inline";
+        }
+        if (n == (x.length - 1)) {
+            document.getElementById("nextBtn").innerHTML = "Finalizar";
+            document.getElementById("nextBtn").classList.toggle('last-step');
+        } else {
+            document.getElementById("nextBtn").innerHTML = "Próximo";
+        }
+        // ... and run a function that displays the correct step indicator:
+        fixStepIndicator(n)
+    }
+
+    function nextPrev(n) {
+        // This function will figure out which tab to display
+        var x = document.getElementsByClassName("tab");
+        // Exit the function if any field in the current tab is invalid:
+        if (n == 1 && !validateForm()) return false;
+        // Hide the current tab:
+        x[currentTab].style.display = "none";
+        // Increase or decrease the current tab by 1:
+        currentTab = currentTab + n;
+        // if you have reached the end of the form... :
+        if (currentTab >= x.length) {
+            //...the form gets submitted:
+            document.getElementById("regForm").submit();
+            return false;
+        }
+        // Otherwise, display the correct tab:
+        showTab(currentTab);
+    }
+
+    function validateForm() {
+        // This function deals with validation of the form fields
+        var x, y, i, valid = true;
+        x = document.getElementsByClassName("tab");
+        y = x[currentTab].getElementsByTagName("input");
+        // A loop that checks every input field in the current tab:
+        for (i = 0; i < y.length; i++) {
+            // If a field is empty...
+            if (y[i].value == "") {
+                // add an "invalid" class to the field:
+                y[i].className += " invalid";
+                // and set the current valid status to false:
+                valid = false;
+            }
+        }
+        // If the valid status is true, mark the step as finished and valid:
+        if (valid) {
+            document.getElementsByClassName("step")[currentTab].className += " finish";
+        }
+        return valid; // return the valid status
+    }
+
+    function fixStepIndicator(n) {
+        // This function removes the "active" class of all steps...
+        var i, x = document.getElementsByClassName("step");
+        for (i = 0; i < x.length; i++) {
+            x[i].className = x[i].className.replace(" active", "");
+        }
+        //... and adds the "active" class to the current step:
+        x[n].className += " active";
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+        // AQUI DESCOMENTAR
         document.getElementById('schedule-date').addEventListener('change', (e) => {
             console.log(e.target.value);
 
