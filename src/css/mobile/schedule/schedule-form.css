@@ -77,7 +77,6 @@ input.invalid {
 .qr-step {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
@@ -91,13 +90,19 @@ input.invalid {
     font-weight: bolder;
 }
 
+.qr-content {
+    border-radius: 20px;
+
+    display: flex;
+    width: 100%;
+}
 
 .qr-content .copy-section {
     border-radius: 20px;
 
     display: flex;
     background-color: var(--gray-color);
-    width: 100%;
+    width: 80%;
 }
 
 
@@ -126,8 +131,19 @@ input.invalid {
     border-radius: 20px;
 }
 
+.tab .heading-text {
+    margin: 2em 0 0 0;
+    display: flex;
+    flex-direction: column;
+
+}
+.tab .heading-text span {
+    font-size: 30px !important;
+    width: 100% !important;
+}
+
 .tab .date-picker {
-    margin-bottom: 5em;
+    margin-bottom: 4em;
 }
 
 .tab .field-input {
@@ -148,4 +164,41 @@ input.invalid {
     font-size: 40px;
     border-radius: 9px;
     padding: 13px;
+}
+
+.congratulations {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    margin: 50px 20px;
+    border: solid 1px var(--white-gray-color);
+    border-radius: 5px;
+
+    gap: 100px;
+}
+
+.congrats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.congrats img {
+    aspect-ratio: 4/4;
+    width: 40%;
+}
+
+.confirm-whatsapp {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.confirm-whatsapp .small-text{
+    font-size: 33px !important;
+    margin: 0 !important;
 }

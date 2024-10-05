@@ -13,6 +13,10 @@
     --details-background-color: black;
 }
 
+.hidden {
+    display: none !important;
+}
+
 a {
     text-decoration: none !important;
 }
@@ -123,6 +127,10 @@ button {
     font-size: 40px;
 
     padding: 10px 20px;
+
+    align-items: center;
+    justify-content: center;
+
     border-radius: 5px;
     z-index: 1000;
     transition: opacity 0.5s ease;

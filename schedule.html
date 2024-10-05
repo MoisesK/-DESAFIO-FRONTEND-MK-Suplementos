@@ -40,7 +40,7 @@
     <header>
         <section class="header container">
             <div class="logo">
-                <button id="mobile-menu" class="material-symbols-outlined">menu</button>
+                <button id="mobile-menu" class="material-symbols-outlined" onclick="showMenu()">menu</button>
                 <h1>Espaço Divas</h1>
                 <button id="mobile-cart-icon" class="material-symbols-outlined">shopping_cart</button>
             </div>
@@ -49,30 +49,80 @@
 
     <main>
         <section class="general-info">
-            <section class="container product-card">
-                <div class="image">
-                    <img src="src/images/mechas.jpeg" alt="banner" >
+            <section id="cart-card" class="container cart-card">
+                <div class="title-cart">
+                    <h3>
+                        <i class="fa fa-shopping-cart"></i>
+                              Carrinho de serviços</h3>
+                <hr>
                 </div>
-                <div class="card-details">
-                    <div class="container informations"><h3>MECHA NA TOUCA</h3></div>
-                    <div class="container money-info">
-                        <div class="monetary">
-                            <span class="amount-value">R$ 500,00</span>
-                            <span class="amount-sufix">(a partir)</span>
+                <div class="cart-items">
+                    <div class="product-card">
+                        <div class="image">
+                            <img src="src/images/mechas.jpeg" alt="banner" >
+                        </div>
+                        <div class="card-details">
+                            <div class="container informations"><h3>MECHA NA TOUCA</h3></div>
+                            <div class="container money-info">
+                                <div class="monetary">
+                                    <span class="amount-value">R$ 500,00</span>
+                                    <span class="amount-sufix">(a partir)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="image">
+                            <img src="src/images/mechas.jpeg" alt="banner" >
+                        </div>
+                        <div class="card-details">
+                            <div class="container informations"><h3>MECHA NA TOUCA</h3></div>
+                            <div class="container money-info">
+                                <div class="monetary">
+                                    <span class="amount-value">R$ 500,00</span>
+                                    <span class="amount-sufix">(a partir)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="image">
+                            <img src="src/images/mechas.jpeg" alt="banner" >
+                        </div>
+                        <div class="card-details">
+                            <div class="container informations"><h3>MECHA NA TOUCA</h3></div>
+                            <div class="container money-info">
+                                <div class="monetary">
+                                    <span class="amount-value">R$ 500,00</span>
+                                    <span class="amount-sufix">(a partir)</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
         </section>
 
+        <section id="loading" class="container hidden"></section>
+
         <form id="regForm" class="container" action="">
+            <section class="container" style="text-align: center; border-bottom: 1px var(--gray-color) solid;">
+                <span class="medium-text" style=>Dados para o agendamento:</span>
+            </section>
+
             <div class="tab">
-                <h3>Escolha a data que deseja realizar seu agendamento!</h3>
+                <div class="heading-text">
+                    <span class="small-text">Escolha a data que deseja realizar seu agendamento!</span>
+                </div>
                 <div class="date-picker">
                     <input id="schedule-date" type="datetime-local" name="schedule-date" />
                 </div>
 
-                <h3>Preencha com seus dados, para validação do agendamento!</h3>
+                <div class="heading-text">
+                    <span class="small-text">Preencha com seus dados, para validação do agendamento!</span>
+                </div>
                 <div class="customer-data">
                     <div class="field-input">
                         <label for="schedule-customer-name">Nome:</label>
@@ -84,7 +134,7 @@
                     </div>
                     <div class="field-input">
                     <label for="schedule-customer-phone">Telefone:</label>
-                    <input id="schedule-customer-phone" type="text" placeholder="(85) 99999-9999" name="schedule-phone" />
+                    <input id="schedule-customer-phone" type="text" placeholder="(85) 99999-9999" maxlength="15" name="schedule-phone" />
                 </div>
                 </div>
             </div>
@@ -98,8 +148,8 @@
                     <div class="qr-content">
                         <img src="src/images/qrcode.png">
                         <div class="copy-section">
-                            <span><i class="fa fa-clipboard"></i></span>
-                            <input class="copy-paste-pix" value="A PIKA DO VOVO NÃO SOBE MAAAAIS" disabled>
+                            <span id="copy-paste-pix-action"><i class="fa fa-clipboard"></i></span>
+                            <input id="copy-paste-pix-value" class="copy-paste-pix" value="A PIKA DO VOVO NÃO SOBE MAAAAIS" disabled>
                         </div>
                     </div>
                     <div>
@@ -140,8 +190,27 @@
                 <span class="step"></span>
                 <span class="step"></span>
             </div>
-
         </form>
+
+        <section id="proof-file-received" class="hidden">
+            <div class="container congratulations">
+                <div class="congrats">
+                    <span class="medium-text">Parabéns, comprovante recebido!</span>
+                    <img src="src/images/receive-payment.png">
+                    <span class="small-text">Recebemos o seu comprovante de pagamento e os dados do seu agendamento!</span>
+                    <span class="small-text">Nosso prazo para validação do comprovante de pagamento é de até 12 horas após o envio do comprovante.</span>
+                    <span class="small-text">Não se preocupe o seu horário já está agendado, somente a invalidez do comprovante de pagamento ou dos dados informados podem retirá-lo de você.</span>
+                </div>
+            </div>
+            <div class="container congratulations">
+                <div class="confirm-whatsapp">
+                    <span class="medium-text">Sem paciência para aguardar as 12 horas?!</span>
+                    <span class="small-text">Que tal "agilizar" o processo de analise ? </span>
+                    <span class="small-text">Clique no botão abaixo e entre em contato diretamente com nosso whatsapp!</span>
+                    <button id="whatsapp-confirm" class="action-button">Confirmar via Whatsapp</button>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="container">
@@ -200,60 +269,6 @@
 <script src="src/js/populate-products.js"></script>
 <script src="src/js/functions.js"></script>
 <script>
-    // document.addEventListener('DOMContentLoaded', () => {
-    //     const loading = makeLoading();
-    //
-    //     const itemsContentDiv = document.getElementById('items-content');
-    //     itemsContentDiv.appendChild(loading);
-    //
-    //     document.getElementById('newsletter-subscription-button').addEventListener('click', (e) => {
-    //         e.preventDefault();
-    //         const email = document.getElementById('newsletter-mail');
-    //
-    //         if (email.value.length == 0) {
-    //             email.style.border = '2px red solid';
-    //
-    //             toast('Campo de email não pode está vazio!');
-    //             return;
-    //         }
-    //
-    //         if (!validateEmail(email.value)) {
-    //             email.style.border = '2px red solid';
-    //             email.style.borderRight = 'none';
-    //
-    //             toast('Email informado está no formato inválido.');
-    //
-    //             return;
-    //         }
-    //
-    //         email.style.border = 'darkgray solid 1pt';
-    //
-    //         toast(`O email ${email.value} foi inscrito em nosso catálogo de promoções!`, 'success');
-    //
-    //         email.value = '';
-    //     })
-    //
-    //     getProductDetails().then((r) => {
-    //         itemsContentDiv.removeChild(loading)
-    //         const contentSection = document.getElementById('items-content');
-    //
-    //         r.forEach((d) => contentSection.appendChild(makeItemRender(d)))
-    //
-    //         const itensCount = document.getElementById('items-count')
-    //         itensCount.innerHTML = `<h3>${r.length} Produtos</h3>`;
-    //
-    //         document.querySelectorAll('[id^="more-informations-button-"]').forEach(button => {
-    //             button.addEventListener('click', (e) => {
-    //                 // document.location.href = '/details.html/' + e.target.value;
-    //
-    //                 document.location.href = '/selfcare/details.html';
-    //             });
-    //         });
-    //     });
-    //
-
-
-
     var currentTab = 0; // Current tab is set to be the first tab (0)
     showTab(currentTab); // Display the current tab
 
@@ -288,8 +303,8 @@
         currentTab = currentTab + n;
         // if you have reached the end of the form... :
         if (currentTab >= x.length) {
-            //...the form gets submitted:
-            document.getElementById("regForm").submit();
+            const event = new CustomEvent('submitForm');
+            document.getElementById("regForm").dispatchEvent(event);
             return false;
         }
         // Otherwise, display the correct tab:
@@ -328,44 +343,43 @@
         x[n].className += " active";
     }
 
+    document.getElementById("regForm")
+        .addEventListener('submit', (e) => e.preventDefault());
 
+    document.getElementById("regForm").addEventListener('submitForm', (e) => {
+        e.preventDefault();
+        const form = document.getElementById('regForm');
+        form.style.display = 'none';
 
+        const loadingSection = document.getElementById('loading');
+        loadingSection.appendChild(makeLoading());
+        loadingSection.classList.toggle('hidden');
 
+        setTimeout(() => {
+            loadingSection.classList.toggle('hidden');
+            document.getElementById('proof-file-received').classList.toggle('hidden');
+            document.getElementById('cart-card').classList.toggle('hidden');
+        }, 4000)
+    });
 
+    document.getElementById('schedule-customer-phone').addEventListener('keypress', (e) => {
+        e.target.value = applyNumberMask(e.target.value, '(##) #####-####')
+    })
 
+    document.getElementById('copy-paste-pix-action').addEventListener('click', (e) => {
+        const pixCopyPaste = document.getElementById('copy-paste-pix-value').value;
+        navigator.clipboard.writeText(pixCopyPaste);
+    })
 
+    document.getElementById('whatsapp-confirm').addEventListener('click', (e) => {
+        toast('Abrindo whatsapp da companhia!', 'success');
+        setInterval(() => {
+            window.open('https://api.whatsapp.com/send/?phone=5585985473412&text=Ol%C3%A1%2C%20acabei%20de%20realizar%20o%20pagamento%20do%20agendamento%20de%20um%20procedimento%20de%20MECHA%20NA%20TOUCA%20que%20possui%20o%20valor%20de%20R%24%20500%2C00.%20Gostaria%20de%20enviar%20meu%20comprovante%20de%20pagamento%20por%20aqui%20tamb%C3%A9m%20para%20agilizar%20a%20valida%C3%A7%C3%A3o%20e%20a%20confirma%C3%A7%C3%A3o%20do%20pagamento%20de%20R%24%20250%2C00%20do%20pr%C3%A9-agendamento,%20', '_blank');
+        }, 3000)
+    })
 
+    document.getElementById('overlay').addEventListener('click', (e) => hiddenMenu());
 
-
-
-
-        // AQUI DESCOMENTAR
-        document.getElementById('schedule-date').addEventListener('change', (e) => {
-            console.log(e.target.value);
-
-            document.getElementById('qrcode-step').classList.toggle('hidden')
-        })
-
-        document.getElementById('send-proof-file').addEventListener('click', (e) => {
-            document.getElementById('qrcode-step').classList.toggle('hidden')
-            document.getElementById('proof-file-step').classList.toggle('hidden')
-        })
-
-        document.getElementById('send-proof-file-archive').addEventListener('click', (e) => {
-            document.getElementById('proof-file-step').classList.toggle('hidden')
-            document.getElementById('payment-confirmed-step').classList.toggle('hidden')
-        })
-
-        document.getElementById('whatsapp-confirm').addEventListener('click', (e) => {
-            toast('Abrindo whatsapp da companhia!', 'success');
-            setInterval(() => {
-                window.open('https://api.whatsapp.com/send/?phone=5585985473412&text=Ol%C3%A1%2C%20acabei%20de%20realizar%20o%20pagamento%20do%20agendamento%20de%20um%20procedimento%20de%20MECHA%20NA%20TOUCA%20que%20possui%20o%20valor%20de%20R%24%20500%2C00.%20Gostaria%20de%20enviar%20meu%20comprovante%20de%20pagamento%20por%20aqui%20tamb%C3%A9m%20para%20agilizar%20a%20valida%C3%A7%C3%A3o%20e%20a%20confirma%C3%A7%C3%A3o%20do%20pagamento%20de%20R%24%20250%2C00%20do%20pr%C3%A9-agendamento.', '_blank');
-            }, 3000)
-        })
-
-
-        document.addEventListener('click', (e) => hiddenMenu());
-        document.getElementById('mobile-menu').addEventListener('click', () => showMenu());
     // })
 </script>
 </body>

@@ -42,13 +42,7 @@ function toast(message = 'Erro', type = 'error') {
     }, 3000);
 }
 
-let menuActive = false;
-
 function showMenu() {
-    if (menuActive) {
-        return;
-    }
-
     const minhaDiv = document.getElementById('navbar');
     const overlay = document.getElementById('overlay');
 
@@ -59,27 +53,38 @@ function showMenu() {
     overlay.style.display = 'block';
 
     document.querySelector('body').style.overflowY = 'hidden';
-
-    setInterval(() => {
-        menuActive = true;
-    }, 2000)
 }
 
 function hiddenMenu() {
     const minhaDiv = document.getElementById('navbar');
-    if (!minhaDiv.contains(event.target) && menuActive) {
-        minhaDiv.style.animation = 'slideOut 0.5s forwards';
-        overlay.style.display = 'none';
-        document.querySelector('body').style.overflowY = 'auto';
-
-        setInterval(() => {
-            minhaDiv.style.display = 'none';
-            menuActive = false;
-        }, 2000)
-    }
+    minhaDiv.style.animation = 'slideOut 0.5s forwards';
+    overlay.style.display = 'none';
+    document.querySelector('body').style.overflowY = 'auto';
 }
 
 function cancelTerm() {
     const termSection = document.getElementById('cancel-term');
     termSection.classList.toggle('active');
+}
+
+function applyNumberMask(value, mask) {
+    const onlyNumbers = value.replace(/\D/g, '');
+
+    let result = '';
+    let iNumber = 0;
+
+    for (let i = 0; i < mask.length; i++) {
+        if (mask[i] === '#') {
+            if (iNumber < onlyNumbers.length) {
+                result += onlyNumbers[iNumber];
+                iNumber++;
+            } else {
+                break;
+            }
+        } else {
+            result += mask[i];
+        }
+    }
+
+    return result;
 }

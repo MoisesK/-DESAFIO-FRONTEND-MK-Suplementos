@@ -1,11 +1,30 @@
-.product-card {
+.cart-card {
     box-sizing: border-box;
     position: sticky;
-
-    display: flex;
-    margin: 50px 20px;
     border: solid 1px var(--white-gray-color);
     border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    margin: 50px 20px;
+
+    max-height: 40vh;
+}
+
+.title-cart {
+    font-size: 40px !important;
+}
+
+.cart-items {
+    overflow-y: scroll;
+}
+
+.product-card {
+    border-left: solid 3px var(--white-gray-color);
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    margin: 50px 0;
 }
 
 .product-card img {

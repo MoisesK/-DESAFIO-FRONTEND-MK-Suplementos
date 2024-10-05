@@ -41,7 +41,7 @@
     <header>
         <section class="header container">
             <div class="logo">
-                <button id="mobile-menu" class="material-symbols-outlined">menu</button>
+                <button id="mobile-menu" class="material-symbols-outlined" onclick="showMenu()">menu</button>
                 <h1>Espaço Divas</h1>
                 <button id="mobile-cart-icon" class="material-symbols-outlined">shopping_cart</button>
             </div>
@@ -206,8 +206,7 @@
             document.location.href = '/schedule.html';
         }
 
-        document.addEventListener('click', (e) => hiddenMenu());
-        document.getElementById('mobile-menu').addEventListener('click', () => showMenu());
+        document.getElementById('overlay').addEventListener('click', (e) => hiddenMenu());
     // })
 </script>
 </body>
