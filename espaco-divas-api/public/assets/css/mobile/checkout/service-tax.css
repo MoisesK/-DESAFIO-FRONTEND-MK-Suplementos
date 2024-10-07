@@ -1,0 +1,115 @@
+.service-tax {
+    /*Remover com JS*/
+    display: none;
+    border-radius: 30px;
+    background-color: var(--gray-color);
+    color: var(--white-color);
+}
+
+.service-tax h3 {
+    font-size: 25px;
+}
+
+
+.service-tax p {
+    font-size: 20px;
+}
+
+
+.service-tax ol,li {
+    font-size: 15px;
+}
+
+
+.service-tax .continue-to-pay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 2em 0;
+}
+
+.service-tax .continue-to-pay button{
+    font-size: 42px;
+}
+
+.service-tax .continue-to-pay span{
+    font-size: 20px;
+}
+
+
+
+
+
+.schedule-section {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.schedule-section h3{
+    font-size: 30px;
+}
+
+.schedule-section .date-picker {
+    align-items: start !important;
+}
+
+.schedule-section .date-picker input{
+    font-size: 30px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.qr-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    width: 50%;
+    margin: 50px;
+    aspect-ratio: 16/2;
+}
+
+.qr-content span{
+    padding: 20px;
+    border-radius: 20px;
+    gap: 20;
+    font-size: 40px;
+    color: white;
+}
+
+#proof-file-step h3{
+    width: 80%;
+    font-size: 40px;
+    text-align: center;
+}
+
+#payment-confirmed-step {
+    display: flex;
+}
+
+#payment-confirmed-step img{
+    border-radius: 100%;
+}
+
+#payment-confirmed-step texts{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    width: 100%;
+}
+
+#payment-confirmed-step h4{
+    font-size: 30px;
+    text-align: center;
+    font-weight: normal;
+}
+
+

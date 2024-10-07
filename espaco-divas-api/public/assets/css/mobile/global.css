@@ -1,0 +1,145 @@
+:root {
+    --primary-color: #FFC400;
+    --icons-color: #FFFFFF;
+    --button-color: #FFC400;
+    --white-color: #FFFFFF;
+    --white-gray-color: #abaaaa;
+    --gold-color: rgb(245, 200, 0);
+    --red-color: rgb(204, 0, 0);
+
+
+    --error-color: #ff0000;
+    --success-color: #3f8b38;
+    --gray-color: #525050;
+    --monetary-color: #FFC400;
+
+    --details-background-color: black;
+}
+
+.hidden {
+    display: none !important;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+a:focus {
+    outline: none !important;
+}
+
+html, body{
+    width: 100vw;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+hr {
+    color: #A5A1A1;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.action-button {
+    margin-top: 10px;
+    padding: 8px;
+    width: 100%;
+    height: 5vh;
+    font-size: 30px;
+    color: var(--white-color);
+    background-color: var(--button-color);
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.action-button:active{
+    background-color: var(--success-color);
+    transition: 0.2s;
+}
+
+
+.container {
+    padding: 2em 2em;
+}
+
+.error {background-color: var(--error-color)}
+.success {background-color: var(--success-color)}
+
+.small-text {
+    font-size: 20px !important;
+    margin-bottom: 30px;
+}
+
+.medium-text {
+    font-size: 40px !important;
+}
+
+.loading {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+}
+
+.center-item  {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid var(--primary-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#toast {
+    width: 60vw;
+    height: 5vh;
+
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+
+    color: white;
+    font-size: 40px;
+
+    padding: 10px 20px;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 5px;
+    z-index: 1000;
+    transition: opacity 0.5s ease;
+    opacity: 1;
+}
+
+#carrousel .swiper{
+    aspect-ratio: 16/9;
+}
