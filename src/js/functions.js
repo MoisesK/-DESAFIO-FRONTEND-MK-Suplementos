@@ -88,3 +88,7 @@ function applyNumberMask(value, mask) {
 
     return result;
 }
+
+function redirect(locale) {
+    document.location.href = '/' + locale;
+}

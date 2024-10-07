@@ -199,6 +199,7 @@ input.invalid {
 }
 
 .confirm-whatsapp .small-text{
+    width: 100%;
     font-size: 33px !important;
     margin: 0 !important;
 }
