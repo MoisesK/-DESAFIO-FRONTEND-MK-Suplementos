@@ -41,6 +41,8 @@ ENV APP_DEBUG false
 ENV LOG_CHANNEL stderr
 
 EXPOSE 80
+EXPOSE 80
+EXPOSE 9000
 
 COPY ./entrypoint.sh /root/
 RUN ["chmod", "+x", "/root/entrypoint.sh"]
