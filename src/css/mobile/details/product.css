@@ -1,0 +1,89 @@
+.general-info {
+    padding: 4em 2em;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.name h3 {
+    font-size: 50px;
+    color: white;
+}
+
+.images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.images .swiper {
+    border-radius: 30px;
+    width: 70%;
+    height: 40em;
+}
+
+.money-info {
+    padding-top: 30px !important;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.monetary {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+.monetary .amount-value{
+    font-size: 70px;
+    font-weight: bolder;
+    color: var(--monetary-color);
+}
+
+.monetary .amount-sufix{
+    color: var(--white-color);
+    font-size: 40px;
+    font-weight: normal;
+    margin-left: 10px;
+}
+
+.payment-form {
+    text-align: center;
+    color: var(--white-color);
+
+    width: 40%;
+    font-size: 30px;
+
+    word-break: break-word;
+}
+
+.description {
+    background-color: var(--gold-color);
+
+    color: var(--white-color);
+
+    word-break: break-word;
+
+    font-size: 40px;
+    font-weight: normal;
+}
+
+.schedule {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-button {
+    font-size: 50px !important;
+    width: 90%;
+}
