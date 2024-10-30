@@ -62,4 +62,13 @@ class ProductsController extends Controller
             'products' => $this->productRepo->get()
         ]);
     }
+
+    public function orders(int $id)
+    {
+        $product = $this->productRepo->find($id);
+
+        return view('pages.details', [
+            'product' => $product
+        ]);
+    }
 }

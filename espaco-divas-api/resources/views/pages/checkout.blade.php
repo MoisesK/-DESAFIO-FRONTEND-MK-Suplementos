@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="{{asset('assets/css/mobile/checkout/product-card.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/mobile/checkout/service-tax.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/mobile/checkout/schedule-form.css')}}">
-    @vite([])
 
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
@@ -44,7 +43,7 @@
                 <div class="cart-items">
                     <div class="product-card">
                         <div class="image">
-                            <img src="{{$product['images'][0]}}" alt="banner" >
+                            <img src="{{env('APP_URL') . $product['images'][0]}}" alt="banner" >
                         </div>
                         <div class="card-details">
                             <div class="container informations"><h3>{{$product['name']}}</h3></div>
@@ -290,7 +289,7 @@
 
             document.getElementById('whatsapp-confirm').addEventListener('click', (e) => {
                 toast('Abrindo whatsapp da companhia!', 'success');
-                setInterval(() => {
+                setTimeout(() => {
                     window.open(`https://api.whatsapp.com/send/?phone=5585985473412&text=Ol%C3%A1%2C%20acabei%20de%20realizar%20o%20pagamento%20do%20agendamento%20de%20um%20procedimento%20de%20${data.product.name}%20que%20possui%20o%20valor%20de%20R%24%20${formatMonetary(data.total_amount)}.%20Gostaria%20de%20enviar%20meu%20comprovante%20de%20pagamento%20por%20aqui%20tamb%C3%A9m%20para%20agilizar%20a%20valida%C3%A7%C3%A3o%20e%20a%20confirma%C3%A7%C3%A3o%20do%20pagamento%20de%20R%24%20${formatMonetary(data.pre_amount)}%20do%20pr%C3%A9-agendamento.`, '_blank');
                 }, 3000)
             })

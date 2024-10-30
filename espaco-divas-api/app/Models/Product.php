@@ -10,6 +10,8 @@ class Product extends ModelBase
     use HasFactory;
 
     protected $fillable = [
+        'uuid',
+        'category_id',
         'name',
         'description',
         'images',
@@ -31,5 +33,10 @@ class Product extends ModelBase
             'amount' => $this->amount,
             'sufix' => $this->sufix
         ];
+    }
+
+    public function category()
+    {
+        return $this->hasOne(ProductCategory::class, 'id', 'category_id');
     }
 }

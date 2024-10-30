@@ -27,7 +27,6 @@
       <excludeFolder url="file://$MODULE_DIR$/espaco-divas-api/vendor/guzzlehttp/psr7" />
       <excludeFolder url="file://$MODULE_DIR$/espaco-divas-api/vendor/guzzlehttp/uri-template" />
       <excludeFolder url="file://$MODULE_DIR$/espaco-divas-api/vendor/hamcrest/hamcrest-php" />
-      <excludeFolder url="file://$MODULE_DIR$/espaco-divas-api/vendor/laravel/breeze" />
       <excludeFolder url="file://$MODULE_DIR$/espaco-divas-api/vendor/laravel/framework" />
       <excludeFolder url="file://$MODULE_DIR$/espaco-divas-api/vendor/laravel/pint" />
       <excludeFolder url="file://$MODULE_DIR$/espaco-divas-api/vendor/laravel/prompts" />

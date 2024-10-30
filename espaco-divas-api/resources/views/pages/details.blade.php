@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{strtoupper($product['name'])}}</title>
+    <title>{{mb_strtoupper($product['name'], 'UTF-8')}}</title>
     <link rel="stylesheet" href="{{asset('assets/css/mobile/details/product.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/mobile/details/style.css')}}">
 
@@ -32,7 +32,7 @@
     <main>
         <section class="general-info">
             <section class="container name">
-                <div class="informations"><h3>{{strtoupper($product['name'])}}</h3></div>
+                <div class="informations"><h3>{{mb_strtoupper($product['name'], 'UTF-8')}}</h3></div>
             </section>
 
             <section id="carrousel" class="images">

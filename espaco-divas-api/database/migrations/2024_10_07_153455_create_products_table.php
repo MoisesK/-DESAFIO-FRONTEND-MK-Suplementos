@@ -14,9 +14,12 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->uuid();
+            $table->foreignId("category_id")
+                ->references('id')
+                ->on("product_categories");
             $table->string('name', 250);
             $table->text('description');
-            $table->text('sufix')->default('A partir');
+            $table->string('sufix')->default('A partir');
             $table->json('images');
             $table->integer('amount');
             $table->timestamps();

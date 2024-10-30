@@ -27,6 +27,11 @@ class Order extends ModelBase
         return $this->hasOne(Product::class, 'id', 'product_id');
     }
 
+    public function customer(): HasOne
+    {
+        return $this->hasOne(Customer::class, 'id', 'customer_id');
+    }
+
     public function toArray()
     {
         $data = parent::toArray();

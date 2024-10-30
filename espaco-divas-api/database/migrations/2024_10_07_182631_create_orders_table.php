@@ -22,6 +22,8 @@ return new class extends Migration
             $table->integer('post_amount');
             $table->string('payment_proof_file_path');
             $table->integer('status');
+            $table->text('refused_reason')->nullable();
+            $table->text('cancel_reason')->nullable();
             $table->timestamps();
         });
     }
